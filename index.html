@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>transparent picture</title>
+	<style>
+		body {
+			font-family: OpenSans;
+			background: #00bcd44f;
+		}
+		h1 {
+			font-size: 300%;
+			width: 1200px;
+			margin: auto;
+			display: flex;
+			justify-content: center;
+			margin-bottom: 10px;
+		}
+		.Author {
+			font-style: italic;
+			width: 1200px;
+			margin: auto;
+			margin-bottom: 40px;
+			font-size: 150%;
+
+		}
+		.vsbackground {
+			background: url('street.jpg');
+			background-size: cover;
+			background-repeat: no-repeat;
+			width: 1200px;
+			margin: auto;
+
+		}
+		.character {
+			margin-top: 0px;
+			width: 1200px;
+			height: 600px;
+			display: flex;
+			justify-content: center;
+		}
+		.character img {
+			width: 253px;
+			height: 600px;
+		}
+		.talk {
+			border: 1px solid dimgray;
+			border-radius: 10px;
+			position: absolute;
+			width: 1198px;
+			height: 200px;
+			background: #f5f5f59e;
+			margin-top: -200px;
+		}
+		.talk h3 {
+			margin: 10px 0px 5px 80px;
+			font-size: 250%;
+		}
+		.talk p {
+			font-size: 150%;
+			margin: 20px 0px 0px 40px;
+
+		}
+		.nav-btn {
+			width: 1200px;
+		}
+		.nav-btn button{
+			background-color: #f725ffba;
+		  	border: 5px solid #8300b1;
+		  	border-radius: 20px;
+			color: white;
+			padding: 8px 15px;
+			text-align: center;
+			display: inline-block;
+			font-size: 16px;
+			margin: 4px 2px;
+		    cursor: pointer;
+		}
+		.nav-btn button:hover{
+			background-color: tomato;
+		}
+	</style>
+</head>
+<body>
+	<iframe src="silence.mp3" allow="autoplay" id="audio" style="display: none"></iframe>
+	<audio id="player" autoplay loop controls>
+    	<source src="relax.mp3" type="audio/mp3">
+	</audio>
+</iframe> 
+	<h1>You sleep... TOO... MUCH</h1>
+	<div class="Author">Made by: Darking Unit<br>Time and Date Completed: 1:39 AM 7/17/2021</div>
+	<div class="vsbackground" id="vsbg">
+		<div class="character">
+			<img id="miho-p" src="miho/summeruniform/Miho_Summeruni_Smile.png">
+		</div>
+		<div class="talk">
+			<h3>Miho</h3>
+			<p id="miho-t">Woahh! The weather seems very nice, Kazuha.
+				<br/>Wanna go jogging? I feel like I'm at peak of my strength today.</p>
+		</div>
+		<div class="nav-btn">
+			<button onclick="TalkWithMiho(1)">Talk 1</button>
+			<button onclick="TalkWithMiho(2)">Talk 2</button>
+			<button onclick="TalkWithMiho(3)">Talk 3</button>
+			<button onclick="TalkWithMiho(4)">Talk 4</button>
+			<button onclick="TalkWithMiho(5)">Talk 5</button>
+			<button onclick="TalkWithMiho(6)">Talk 6</button>
+		</div>
+	</div>
+
+	<script type="text/javascript">
+		function TalkWithMiho(sl){
+			var pic;
+			var text;
+			var bg;
+			switch (sl){
+				case 1:
+					pic = "miho/summeruniform/Miho_Summeruni_Smile.png";
+					text = "Woahh! The weather seems very nice, Kazuha.<br/>Wanna go jogging? I feel like I'm at peak of my strength today.";
+					bg = "url(street.jpg)";
+					break;
+				case 2:
+					pic = "miho/summeruniform/Miho_Summeruni_Frown.png";
+					text = "Huhh?? You don't wanna go? You wanna go home and sleep even though the weather is nice? <br/>Don't be so lazy...";
+					bg = "url(street.jpg)";
+					break;
+				case 3:
+					pic = "miho/Casual/Miho_Casual_Smile.png";
+					text = "Ta-da. You don't know why I'm here, do you? Of course because you will go jogging with me.<br/>So you are really going to sleep, huh? You say that you feel tired always right, Kazuha?<br/> Now I know the reason why. You sleep... TOO... MUCH. Hmph!!";
+					bg = "url(bedroom.jpg)";
+					break;
+				case 4:
+					pic = "miho/Casual/Miho_Casual_Open.png";
+					text = "You're doing great. Despite being a slacker, you're good at jogging. <br/>Keep the spirit, Kazuha. And no need to thank me for inviting you. You're too kind.";
+					bg = "url(runStreet.png)";
+					break;
+				case 5:
+					pic = "miho/Casual/Miho_Casual_Frown_Blush.png";
+					text = "Besides, it's me that I want to be with you.<br/>...<br/> Ahh. Nothing. I just talk to myself. Haha..Haha..Haha.";
+					bg = "url(runStreet.png)";
+					break;
+				case 6:
+					pic = "miho/Casual/Miho_Casual_Smile_Blush.png";
+					text = "Now, more ten laps around the lake. Hey hey, don't make that face, it's not that long, you know? <br/>I know you can do it, you just want to go home early. <br/>C'mon, Kazuha. Be strong. One. Two. One. Two. One. Two.";
+					bg = "url(runStreet.png)";
+					break;		
+				
+			}
+			document.getElementById('miho-p').src = pic;
+			document.getElementById('miho-t').innerHTML = text;
+			document.getElementById('vsbg').style.background = bg;
+			document.getElementById('vsbg').style.backgroundSize = "cover";
+		}
+	</script>
+
+</body>
+</html>
